@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Based Employee Skill Development Tracker</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #172554;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        .welcome h2 {
+            color: #1d4ed8;
+            margin-bottom: 10px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        .card h3 {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #1d4ed8;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        .section h2 {
+            color: #1d4ed8;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 7px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #eff6ff;
+            color: #1e3a8a;
+        }
+
+        .badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #2563eb;
+            border-radius: 10px;
+        }
+
+        .course {
+            border: 1px solid #e2e8f0;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .course h3 {
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        .course p {
+            margin: 7px 0;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Employee Skill Development Tracker</h1>
+        <p>Learn New Skills. Track Progress. Grow Your Career.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Dashboard</a>
+        <a href="#employees">Employees</a>
+        <a href="#skills">Skills</a>
+        <a href="#training">Training</a>
+        <a href="#development">Development Plan</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="welcome" id="home">
+            <h2>Welcome to the Employee Development Portal</h2>
+            <p>
+                Track employee skills, monitor training progress,
+                identify skill gaps, and support continuous learning
+                through a cloud-based platform.
+            </p>
+        </section>
+
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Employees</h3>
+                <p>120</p>
+            </div>
+
+            <div class="card">
+                <h3>Available Courses</h3>
+                <p>15</p>
+            </div>
+
+            <div class="card">
+                <h3>Completed Trainings</h3>
+                <p>85</p>
+            </div>
+        </section>
+
+        <section class="section" id="employees">
+            <h2>Employee Registration</h2>
+
+            <form action="#">
+                <label for="name">Employee Name</label>
+                <input type="text" id="name"
+                       placeholder="Enter employee name" required>
+
+                <label for="employeeid">Employee ID</label>
+                <input type="text" id="employeeid"
+                       placeholder="Enter employee ID" required>
+
+                <label for="department">Department</label>
+                <select id="department" required>
+                    <option value="">Select department</option>
+                    <option>Information Technology</option>
+                    <option>Human Resources</option>
+                    <option>Finance</option>
+                    <option>Marketing</option>
+                    <option>Engineering</option>
+                </select>
+
+                <label for="role">Job Role</label>
+                <input type="text" id="role"
+                       placeholder="Enter job role" required>
+
+                <button type="submit">Add Employee</button>
+            </form>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Employee Skill Tracking</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Skill</th>
+                            <th>Proficiency</th>
+                            <th>Progress</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Employee A</td>
+                            <td>Python</td>
+                            <td><span class="badge">Intermediate</span></td>
+                            <td>
+                                65%
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                         style="width: 65%"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Employee B</td>
+                            <td>Cloud Computing</td>
+                            <td><span class="badge">Beginner</span></td>
+                            <td>
+                                40%
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                         style="width: 40%"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Employee C</td>
+                            <td>Data Analytics</td>
+                            <td><span class="badge">Advanced</span></td>
+                            <td>
+                                90%
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                         style="width: 90%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="training">
+            <h2>Available Training Courses</h2>
+
+            <div class="course">
+                <h3>Python Programming</h3>
+                <p>Learn Python fundamentals and practical programming.</p>
+                <p><strong>Duration:</strong> 4 Weeks</p>
+                <p><strong>Level:</strong> Beginner</p>
+                <button type="button">View Course</button>
+            </div>
+
+            <div class="course">
+                <h3>Cloud Computing Fundamentals</h3>
+                <p>Understand cloud services, storage, and deployment.</p>
+                <p><strong>Duration:</strong> 6 Weeks</p>
+                <p><strong>Level:</strong> Beginner</p>
+                <button type="button">View Course</button>
+            </div>
+
+            <div class="course">
+                <h3>Data Analytics</h3>
+                <p>Learn data analysis and reporting techniques.</p>
+                <p><strong>Duration:</strong> 5 Weeks</p>
+                <p><strong>Level:</strong> Intermediate</p>
+                <button type="button">View Course</button>
+            </div>
+        </section>
+
+        <section class="section" id="development">
+            <h2>Employee Development Plan</h2>
+
+            <form action="#">
+                <label for="planemployee">Employee Name</label>
+                <input type="text" id="planemployee"
+                       placeholder="Enter employee name" required>
+
+                <label for="skill">Target Skill</label>
+                <input type="text" id="skill"
+                       placeholder="Enter skill to develop" required>
+
+                <label for="level">Target Proficiency</label>
+                <select id="level" required>
+                    <option value="">Select target level</option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                </select>
+
+                <label for="deadline">Target Completion Date</label>
+                <input type="date" id="deadline" required>
+
+                <button type="submit">Create Development Plan</button>
+            </form>
+        </section>
+
+        <section class="section">
+            <h2>Cloud Platform Information</h2>
+            <p>
+                This website can be hosted using cloud services such as
+                AWS, Microsoft Azure, or Google Cloud.
+            </p>
+            <p>
+                A backend and cloud database are required to store employee
+                profiles, skills, training progress, and development plans.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Cloud-Based Employee Skill Development Tracker</p>
+        <p>Designed using HTML and CSS</p>
+    </footer>
+
+</body>
+</html>
